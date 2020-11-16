@@ -14,7 +14,7 @@ h1 {
   margin-bottom : 0;
 }
 
-h2, h3{
+h2, h3, h4{
   color: #60d394;
   font-family:'Montserrat', sans-serif;
   font-weight: bold;
@@ -31,7 +31,7 @@ a:hover{
 }
 
 hr{
-  color:#93bedf;
+  color:#84a98c;
   border-style: dotted none none;
   border-width: 5px;
   border-spacing: 50px;
@@ -54,7 +54,17 @@ hr{
   width: 140px;
 }
 
+@keyframes colder-weather {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(0.5);
+  }
+}
+
 .first-cloud:hover, .second-cloud:hover {
+  animation: colder-weather 1s 1;
   filter: brightness(0.5);
 }
 
@@ -66,7 +76,17 @@ hr{
   opacity: 0;
 }
 
+@keyframes snowing {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 100;
+  }
+}
+
 .first-cloud:hover~.left-snowflakes, .second-cloud:hover~.right-snowflakes {
+  animation: snowing 1s 1;
   opacity: 100;
 }
 
@@ -103,13 +123,39 @@ hr{
 
 .middle-container{
   background-color: #f4f1de;
-  padding: 100px 200px 100px 200px;
+  padding: 100px 200px 200px 200px;
 }
+
+@keyframes zoom-in-profile {
+  from {
+    width: 100px;
+  }
+  to {
+    width: 120px;
+  }
+}
+
 .profile-pic{
   width: 100px;
   border: outset #43aa8b;
   border-radius: 100px;
 }
+.profile-pic:hover{
+  animation: zoom-in-profile 1s 1;
+  width: 120px;
+}
+
+@keyframes box-on-skill-row {
+  from {
+    background-color: inherit;
+    box-shadow: 0 0 0 0 #43aa8b;
+  }
+  to {
+    background-color: #dee2ff;
+    box-shadow: 0 0 0 25px #43aa8b;
+  }
+}
+
 .skill-row{
   border: 7px outset #43aa8b;
   border-radius: 40px;
@@ -120,9 +166,25 @@ hr{
 .skill-row:hover{
   background-color: #dee2ff;
   box-shadow: 0 0 0 25px #43aa8b;
+  animation: box-on-skill-row 1s 1;
 }
 .skills-icon{
   margin-bottom: 5px;
+}
+.contact-button{
+  background-color: #43aa8b;
+  border: 10px outset #43aa8b;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  line-height: 2px;
+  text-decoration: none;
+}
+.contact-button:hover{
+  background-color: #aaf683;
+  border-color: #aaf683;
+  color: #ff9b85;
+  cursor: pointer;
 }
 
 @media (max-width:600px){
@@ -135,13 +197,20 @@ hr{
 
 .bottom-container{
   background-color: #ffd97d;
-  position: fixed;
-  width: 100%;
+  bottom: 0;
   height: 70px;
   left: 0;
-  bottom: 0;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
 }
 .footer-link{
-  margin-left: 20px;
-  margin-right: 20px;
+  color: white;
+  margin: 20px 20px auto 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.copyright{
+  color: white;
+  font-size: 12px;
 }
