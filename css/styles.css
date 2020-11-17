@@ -14,8 +14,16 @@ h1 {
   margin-bottom : 0;
 }
 
-h2, h3, h4{
+h2{
   color: #60d394;
+  font-family:'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+h3, h4{
+  color: #43aa8b;
   font-family:'Montserrat', sans-serif;
   font-weight: bold;
   margin-top: 5px;
@@ -95,7 +103,7 @@ hr{
 }
 
 .header-image {
-  margin-top: 150px;
+  margin: 200px auto 50px auto;
   width: 300px;
 }
 
@@ -107,6 +115,7 @@ hr{
     font-size: 13px;
   }
   .header-image {
+    margin: 150px auto 0 auto;
     width: 150px;
   }
   .first-cloud, .second-cloud{
@@ -123,73 +132,92 @@ hr{
 
 .middle-container{
   background-color: #f4f1de;
-  padding: 100px 200px 200px 200px;
+  padding: 100px 100px 200px 100px;
 }
 
 @keyframes zoom-in-profile {
   from {
     width: 100px;
+    margin-bottom: 20px;
   }
   to {
     width: 120px;
+    margin-bottom: 0;
   }
 }
 
 .profile-pic{
-  width: 100px;
-  border: outset #43aa8b;
+  border: outset #adf7b6;
   border-radius: 100px;
+  margin-bottom: 20px;
+  width: 100px;
 }
 .profile-pic:hover{
   animation: zoom-in-profile 1s 1;
+  margin-bottom: 0;
   width: 120px;
+}
+.skills{
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 50px;
 }
 
 @keyframes box-on-skill-row {
   from {
-    background-color: inherit;
-    box-shadow: 0 0 0 0 #43aa8b;
+    background-color: #adf7b6;
+    box-shadow: 0 0 0 0 #adf7b6;
   }
   to {
     background-color: #dee2ff;
-    box-shadow: 0 0 0 25px #43aa8b;
+    box-shadow: 0 0 0 25px #80ed99;
   }
 }
 
 .skill-row{
-  border: 7px outset #43aa8b;
-  border-radius: 40px;
-  margin-bottom: 50px;
-  margin-top: 50px;
+  background-color: #adf7b6;
+  border: 7px outset #adf7b6;
+  border-radius: 200px;
+  height: 300px;
+  margin: 50px auto 50px auto;
   padding: 20px 20px 20px 20px;
+  width: 300px;
 }
 .skill-row:hover{
-  background-color: #dee2ff;
-  box-shadow: 0 0 0 25px #43aa8b;
   animation: box-on-skill-row 1s 1;
+  background-color: #dee2ff;
+  box-shadow: 0 0 0 25px #80ed99;
 }
 .skills-icon{
   margin-bottom: 5px;
 }
+.skill-name{
+  color: darkslategray;
+}
 .contact-button{
   background-color: #43aa8b;
   border: 10px outset #43aa8b;
-  border-radius: 10px;
+  border-radius: 20px;
   color: white;
-  font-weight: bold;
   line-height: 2px;
   text-decoration: none;
 }
 .contact-button:hover{
   background-color: #aaf683;
   border-color: #aaf683;
-  color: #ff9b85;
+  color: darkslategray;
   cursor: pointer;
 }
 
 @media (max-width:600px){
   .middle-container{
     padding: 100px 10px 100px 10px;
+  }
+  .skill-row{
+    height: 250px;
+    width: 250px;
   }
 }
 
@@ -212,5 +240,6 @@ hr{
 }
 .copyright{
   color: white;
+  font-family: 'Quicksand', sans-serif;
   font-size: 12px;
 }
