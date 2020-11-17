@@ -38,6 +38,10 @@ a:hover{
   color: #ee6055;
 }
 
+span{
+  text-decoration: line-through;
+}
+
 hr{
   color:#84a98c;
   border-style: dotted none none;
@@ -182,7 +186,7 @@ hr{
   border-radius: 200px;
   height: 300px;
   margin: 50px auto 50px auto;
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
   width: 300px;
 }
 .skill-row:hover{
