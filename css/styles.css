@@ -14,9 +14,18 @@ h1 {
   margin-bottom : 0;
 }
 
-h2, h3{
+h2{
   color: #60d394;
   font-family:'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+h3, h4{
+  color: #43aa8b;
+  font-family:'Montserrat', sans-serif;
+  font-weight: bold;
   margin-top: 5px;
 }
 
@@ -29,8 +38,12 @@ a:hover{
   color: #ee6055;
 }
 
+span{
+  text-decoration: line-through;
+}
+
 hr{
-  color:#93bedf;
+  color:#84a98c;
   border-style: dotted none none;
   border-width: 5px;
   border-spacing: 50px;
@@ -53,19 +66,39 @@ hr{
   width: 140px;
 }
 
+@keyframes colder-weather {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(0.5);
+  }
+}
+
 .first-cloud:hover, .second-cloud:hover {
+  animation: colder-weather 1s 1;
   filter: brightness(0.5);
 }
 
 .left-snowflakes, .right-snowflakes{
   display: inline-block;
-  width: 50px;
+  width: 60px;
   margin: 0 12px 0 12px;
   filter: brightness(0.75);
   opacity: 0;
 }
 
+@keyframes snowing {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 100;
+  }
+}
+
 .first-cloud:hover~.left-snowflakes, .second-cloud:hover~.right-snowflakes {
+  animation: snowing 1s 1;
   opacity: 100;
 }
 
@@ -74,7 +107,7 @@ hr{
 }
 
 .header-image {
-  margin-top: 150px;
+  margin: 200px auto 50px auto;
   width: 300px;
 }
 
@@ -86,6 +119,7 @@ hr{
     font-size: 13px;
   }
   .header-image {
+    margin: 150px auto 0 auto;
     width: 150px;
   }
   .first-cloud, .second-cloud{
@@ -93,8 +127,8 @@ hr{
     margin: 0 0 0 0;
   }
   .left-snowflakes, .right-snowflakes{
-    width: 20px;
-    margin: 0 7px 0 7px;
+    width: 25px;
+    margin: 0 2px 0 2px;
   }
 }
 
@@ -102,26 +136,114 @@ hr{
 
 .middle-container{
   background-color: #f4f1de;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 100px 200px 100px;
 }
+
+@keyframes zoom-in-profile {
+  from {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  to {
+    width: 120px;
+    margin-bottom: 0;
+  }
+}
+
 .profile-pic{
+  border: outset #adf7b6;
+  border-radius: 100px;
+  margin-bottom: 20px;
   width: 100px;
 }
+.profile-pic:hover{
+  animation: zoom-in-profile 1s 1;
+  margin-bottom: 0;
+  width: 120px;
+}
+.skills{
+  align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+@keyframes box-on-skill-row {
+  from {
+    background-color: #adf7b6;
+    box-shadow: 0 0 0 0 #adf7b6;
+  }
+  to {
+    background-color: #dee2ff;
+    box-shadow: 0 0 0 25px #80ed99;
+  }
+}
+
 .skill-row{
-  margin-bottom: 50px;
+  background-color: #adf7b6;
+  border: 7px outset #adf7b6;
+  border-radius: 200px;
+  height: 300px;
+  margin: 50px auto 50px auto;
+  padding: 20px;
+  width: 300px;
+}
+.skill-row:hover{
+  animation: box-on-skill-row 1s 1;
+  background-color: #dee2ff;
+  box-shadow: 0 0 0 25px #80ed99;
 }
 .skills-icon{
   margin-bottom: 5px;
+}
+.skill-name{
+  color: darkslategray;
+}
+.contact-button{
+  background-color: #43aa8b;
+  border: 10px outset #43aa8b;
+  border-radius: 20px;
+  color: white;
+  line-height: 2px;
+  text-decoration: none;
+}
+.contact-button:hover{
+  background-color: #aaf683;
+  border-color: #aaf683;
+  color: darkslategray;
+  cursor: pointer;
+}
+
+@media (max-width:600px){
+  .middle-container{
+    padding: 100px 10px 100px 10px;
+  }
+  .skill-row{
+    height: 250px;
+    width: 250px;
+  }
 }
 
 /* ============ bottom ============*/
 
 .bottom-container{
   background-color: #ffd97d;
-  position: fixed;
-  width: 100%;
+  bottom: 0;
   height: 70px;
   left: 0;
-  bottom: 0;
+  padding-top: 10px;
+  position: fixed;
+  width: 100%;
+}
+.footer-link{
+  color: white;
+  margin: 20px 20px auto 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.copyright{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
 }
